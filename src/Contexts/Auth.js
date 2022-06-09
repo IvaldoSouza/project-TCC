@@ -7,24 +7,24 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const token = localStorage.getItem("user_token");
-    const usersStorage = localStorage.getItem("users_db");
+    const usersStorage = localStorage.getItem("user_db");
 
     if (token && usersStorage) {
       const hasUser = JSON.parse(usersStorage)?.filter(
         (item) => item.email === JSON.parse(token).email
       );
+
       if(hasUser) setUser(hasUser[0]);
     }
   }, []);
 
   const signin = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_db"));
+    const usersStorage = JSON.parse(localStorage.getItem("user_db"));
     const hasUser = usersStorage?.filter((item) => item.email === email);
 
     if (hasUser?.length) {
       if (hasUser[0].email === email && hasUser[0].password === password) {
         const token = Math.random().toString(36).substring(2);
-        console.log('aqui', token);
 
         localStorage.setItem("user_token", JSON.stringify({ email, token }));
         setUser({ email, password });
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signup = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_db"));
+    const usersStorage = JSON.parse(localStorage.getItem("user_db"));
     const hasUser = usersStorage?.filter((item) => item.email === email);
 
     if (hasUser?.length) {

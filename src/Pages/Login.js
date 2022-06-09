@@ -31,7 +31,9 @@ export default function Login() {
     }
 
     const res = signin(email, password);
-    if(res) setError(res)
+    if(res) {
+      return setError(res)
+    }
 
     navigate("/home");
   };
@@ -68,7 +70,6 @@ export default function Login() {
               // onChange={ handleChangePassword }
             />
           </div>
-          <Link to="">
           <div id="liveAlertPlaceholder">{error}</div>
             <button
               className="btn btn-outline-primary shadow"
@@ -79,7 +80,6 @@ export default function Login() {
             >
               Entrar
             </button>
-          </Link>
           <br />
           <br />
           <span class="form-text">Não tem uma conta?</span>
