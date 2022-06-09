@@ -1,19 +1,12 @@
 import React from "react";
-import Logo from "./Logo";
-// import { useLocation, useHistory } from 'react-router-dom';
+import Logo from "../TelaInicial/Logo";
 
-// function teste(e) {
-//   e.preventDefault();
-//   return(
-    
-//     // <a href="/search-result/"></a>
-    
-//   )
-// }
 
 function TelaInicial() {
-  // const location = useLocation();
-  // const history = useHistory();
+
+  const QueryMark = () => {
+    
+  }
 
   return(
     <div>
@@ -49,7 +42,10 @@ function TelaInicial() {
         <i className="fa-solid fa-store me-2"></i>
           Logista
         </button>
-        <button className="btn btn-outline-danger btn-lg shadow" type="button">
+        <button 
+        className="btn btn-outline-danger btn-lg shadow" 
+        type="button"
+        onClick={ QueryMark } >
         <i className="fa-solid fa-building me-2"></i>
           Fornecedor
         </button>

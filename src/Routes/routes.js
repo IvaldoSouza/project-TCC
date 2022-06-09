@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from '../TelaInicial/Home.js';
+import Home from '../Pages/Home.js';
 import Registration from "../Pages/Registration.js";
 import SearchResult from "../Pages/SearchResult.js";
 import Register from "../Pages/Register.js";
