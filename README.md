@@ -1,4 +1,6 @@
 # Getting Started with Create React App
+# Projeto No-Piracy é um projeto que identifica se uma marca é falsificada ou não no ramo óptico.
+## É um projeto desenvolvido para cumprimento dos requisitos do TCC do curso de Engenharia de Software da Unicesumar.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
