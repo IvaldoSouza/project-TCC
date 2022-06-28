@@ -1,13 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import apiConnect from "../Api/ApiConnect";
 import Logo from "../TelaInicial/Logo";
+import { useNavigate } from "react-router-dom";
+import { useForm } from 'react-hook-form';
+import CardResult from "../Components/CardsResult";
 
 
-function TelaInicial() {
+function TelaInicial(props) {
+  const [marcas, setMarcas] = useState([{}]);
+  const [searchMarca, setSearchMarca] = useState('');
+  const navigate = useNavigate();
 
-  const QueryMark = () => {
-    
+
+  const handleLojista = () => {
+    navigate('/registration-lojista')
   }
 
+  const handleFornecedor = () => {
+    navigate('/registration-fornecedor')
+  }
+
+  useEffect(() => {
+      apiConnect.get('/cadastro-marca')
+        .then(res => {
+          const result = res.data
+          setMarcas(result);
+        });
+  }, []);
+
+  // const onChange = (ev) => {
+  //   ev.preventDefault()
+  //   const { value } = ev.target
+  //   console.log('aqui 10', value)
+  //   setSearchMarca(value)
+  // }
+
+  // function Search() {
+  //   console.log('chegou')
+  //   const value = onSubmit()
+  //   // const result = marcas.find( item => item.marca === value);
+  //   console.log('chegou 2', value)
+  // }
+
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = data => {
+    marcas.filter((value) => {
+      if(value.marca === data.marca)
+      {
+       return setSearchMarca(value.marca)
+      }           
+    });
+  }
+  
   return(
     <div>
       <hr />
@@ -15,45 +60,50 @@ function TelaInicial() {
       <hr />
       <br />
       <br />
-      <br />
-      <br />
+      <CardResult searchMarca={ searchMarca } />
+
       <br />
       <br />
 
-      <form className="d-flex" role="search">
-        <input className="form-control me-2 shadow" type="search" placeholder="Pesquisar Marca" aria-label="Search"/>
+      <form className="d-flex" onSubmit={ handleSubmit(onSubmit) }>
+        <input 
+          className="form-control me-2 shadow" 
+          type="text" 
+          name="marca"
+          {...register("marca")}
+          placeholder="Pesquisar Marca"
+        />
         <div className="d-flex justify-content-end ">
-          <button className="btn btn-outline-primary btn-sm shadow" type="submit" >
+          <button 
+            className="btn btn-outline-primary btn-sm shadow" 
+            type="submit" 
+          >
             <i className="fa-solid fa-magnifying-glass me-2"></i>
             Pesquisar
           </button>
         </div>
       </form>
-
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-
       <div className="d-grid gap-2 col-6 mx-auto">
-        <button className="btn btn-outline-danger btn-lg shadow" type="button">
+        <button 
+          className="btn btn-outline-danger btn-lg shadow" 
+          type="button" 
+          onClick={handleLojista}>
         <i className="fa-solid fa-store me-2"></i>
-          Logista
+          Logista   
         </button>
         <button 
-        className="btn btn-outline-danger btn-lg shadow" 
-        type="button"
-        onClick={ QueryMark } >
+          className="btn btn-outline-danger btn-lg shadow" 
+          type="button" 
+          onClick={handleFornecedor}>
         <i className="fa-solid fa-building me-2"></i>
           Fornecedor
         </button>
-      </div>
-      
+      </div>     
     </div>
   )  
 }
-
 
 export default TelaInicial ;

@@ -1,31 +1,39 @@
-import React, { useState } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  NavbarToggler,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-} from 'reactstrap';
+import React from "react";
 
-const MenuInicial = (props) => {
-  // const [isOpen, setIsOpen] = useState(false);
-  // const toggle = () => setIsOpen(!isOpen);
+const MenuInicial = () => {
 
   return(
     <div>
-      <Navbar
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div className="container-fluid">
+          
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/home">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="registration-lojista">Cadastro Lojista</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="registration-fornecedor">Cadastro Fornecedor</a>
+              </li>
+            </ul>
+          </div>
+          <a className="navbar-brand" href="/">Sair</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+
+      {/* <Navbar
         color="primary" 
         expand="md"
         dark
       >
-        <NavbarBrand href="/">
+        <NavbarBrand href="/home">
           Home
         </NavbarBrand>
         <NavbarToggler onClick={function noRefCheck(){}} />
@@ -35,8 +43,8 @@ const MenuInicial = (props) => {
             navbar
           >
             <NavItem>
-              <NavLink href="/search-result/">
-                Search
+              <NavLink href="/register">
+                Cadastrar Produtos
               </NavLink>
             </NavItem>
             <NavItem>
@@ -52,27 +60,24 @@ const MenuInicial = (props) => {
                 caret
                 nav
               >
-                Options
+                Registration
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  Option 1
+                  Lojista
                 </DropdownItem>
                 <DropdownItem>
-                  Option 2
+                  Fornecedor
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
           <NavbarText>
-            Simple Text
+            Sair
           </NavbarText>
         </Collapse>
-      </Navbar>
+      </Navbar> */}
     </div>
   )
 }

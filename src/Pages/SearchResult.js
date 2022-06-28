@@ -1,6 +1,7 @@
 import React from "react";
 
 function SearchResult(props) {
+
   return(
     <div>
       <br />
@@ -14,7 +15,7 @@ function SearchResult(props) {
             <div className="card-body">
               <div className="d-flex justify-content-between">
                 <h5 className="card-title">
-                { item.id } - { item.marca}
+                { item.marca}
                 </h5>
                 <h6>
                   Original
@@ -27,8 +28,6 @@ function SearchResult(props) {
           </div>
         ))}
       </div>
-      
-      
     </div>
   )
 }

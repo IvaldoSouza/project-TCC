@@ -1,40 +1,45 @@
 import React from "react";
-import SearchResult from "../Pages/SearchResult";
 
-function CardResult() {
+function CardResult(props) {
+  // const navigate = useNavigate();
+  
+  // const [test, setTest] = useState()
 
-  const arry = [{
-    id: 1,
-    marca: 'Nike',
-    fabricante: 'Nike S.A',
-    Fornecedor: 'Luxótica',
-  },
-  {
-    id: 2,
-    marca: 'Giorgi Armani',
-    fabricante: 'Ótica S.A',
-    Fornecedor: 'Tecótica',
-  },
-  {
-    id: 3,
-    marca: 'Adidas',
-    fabricante: 'Adidas S.A',
-    Fornecedor: 'Luxótica',
-  },
-  {
-    id: 4,
-    marca: 'Ray Ban',
-    fabricante: 'Luxótica S.A',
-    Fornecedor: 'Luxótica',
-  }
-]
+  // useEffect(() => {
+    
+  // }, [])
+  
+  // function UpdatePage() {
+  //   navigate('/card-result');
+  // }
 
   return(
     <div>
-      <section>
-        { arry.map((item, index) => (
-          <SearchResult key={ index } item={ item } /> ))}
-      </section>
+      {props.searchMarca ? (
+        <div className="card mb-2 shadow">
+          <div className="card-body">
+            <button 
+              type="button" 
+              className="btn-close"
+              aria-label="Close"
+            >
+            </button>
+            <br />
+            <div className="d-flex justify-content-between">
+              <h5 className="card-title" style={{ color: "#dc3545" }}>
+                Parabéns a Marca <strong>{ props.searchMarca }</strong> é Original!
+              </h5>
+              <h6 style={{ color: "#dc3545" }}>
+                Original
+                <i className="fa-solid fa-thumbs-up ms-1 primary"></i>
+              </h6>
+            </div>
+              <strong className="card-text">Lutemos juntos contra a Pirataria</strong>
+              <p className="card-text">Denuncie!</p>
+          </div>
+        </div>
+
+      ): <h3 style={{ textAlign: "center", color: "white", backgroundColor: "#dc3545" }}>DIGITE A MARCA DESEJADA</h3>}
     </div>  
   )
 }

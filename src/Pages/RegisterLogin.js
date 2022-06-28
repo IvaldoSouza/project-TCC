@@ -40,9 +40,9 @@ export default function RegisterLogin() {
         <h1> Crie seu Login</h1>
         <form >
           <div className="mb-3" style={{  }}>
-            <label class="form-label">E-mail</label>
+            <label className="form-label">E-mail</label>
             <input
-              class="form-control shadow"
+              className="form-control shadow"
               type="text"
               placeholder="Digite seu e-mail"
               aria-describedby="emailHelp"
@@ -51,9 +51,9 @@ export default function RegisterLogin() {
             />
           </div>
           <div className="mb-3" style={{  }}>
-            <label class="form-label">Digite seu  E-mail novamente</label>
+            <label className="form-label">Digite seu  E-mail novamente</label>
             <input
-              class="form-control shadow"
+              className="form-control shadow"
               type="text"
               placeholder="Confirme seu e-mail"
               aria-describedby="emailHelp"
@@ -62,9 +62,9 @@ export default function RegisterLogin() {
             />
           </div>
           <div className="mb-3" >
-            <label class="form-label">Senha</label>
+            <label className="form-label">Senha</label>
             <input
-              class="form-control shadow"
+              className="form-control shadow"
               type="password"
               placeholder="Digite sua senha"
               aria-describedby="emailHelp"
@@ -86,7 +86,7 @@ export default function RegisterLogin() {
           </Link>
           <br />
           <br />
-          <span class="form-text">Já tem uma conta?</span>
+          <span className="form-text">Já tem uma conta?</span>
           <br />
           <div>
             <Link to="/">

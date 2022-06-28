@@ -5,7 +5,7 @@ import { AuthProvider } from './Contexts/Auth';
 
 function App() {
   return (
-    <AuthProvider>
+    <AuthProvider >
       <div className='mt-3'>
         <Routers/>
       </div>

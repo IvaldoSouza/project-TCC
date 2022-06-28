@@ -37,20 +37,20 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const signup = (email, password) => {
+  const signup = (email, password, fornecedor, endereço, cidade, estado, cep) => {
     const usersStorage = JSON.parse(localStorage.getItem("user_db"));
     const hasUser = usersStorage?.filter((item) => item.email === email);
 
     if (hasUser?.length) {
-      return "Já tem uma conta com esse E-mail";
+      return "Já existe uma conta com esse E-mail";
     }
 
     let newUser;
 
     if (usersStorage) {
-      newUser = [...usersStorage, { email, password }];
+      newUser = [...usersStorage, { email, password, fornecedor, endereço, cidade, estado, cep }];
     } else {
-      newUser = [{ email, password }];
+      newUser = [{ email, password, fornecedor, endereço, cidade, estado, cep }];
     }
 
     localStorage.setItem("user_db", JSON.stringify(newUser));

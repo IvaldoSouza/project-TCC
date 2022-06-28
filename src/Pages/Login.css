@@ -84,3 +84,7 @@ input::placeholder {
     transform: rotate(-10deg);
   }
 }
+
+.ooo {
+  border: red;
+}

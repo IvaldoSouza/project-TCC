@@ -47,25 +47,27 @@ export default function Login() {
       </section> 
       <br />
       <br />
-      <section style={{ textAlign: "center" }}>
+      <section style={{ textAlign: "center"}}>
         <h1>Login</h1>
         <form >
-          <div className="mb-3" style={{  }}>
-            <label class="form-label">E-mail</label>
+          <div className="mb-3 col-lg-6 offset-md-3">
+            {/* <label className="form-label">E-mail</label> */}
             <input
-              class="form-control shadow"
+              className="form-control shadow col-lg-6"
               type="text"
               placeholder="Digite seu e-mail"
+              id="exampleInputEmail1"
               onChange={(e) => [setEmail(e.target.value), setError("")]}
               // onChange={ handleChangeEmail }
             />
           </div>
-          <div className="mb-3" >
-            <label class="form-label">Senha</label>
+          <div className="mb-3 col-lg-6 offset-md-3"  >
+            {/* <label className="form-label">Senha</label> */}
             <input
-              class="form-control shadow"
+              className="form-control shadow"
               type="password"
-              placeholder="Digite sua senha"aria-describedby="emailHelp"
+              placeholder="Digite sua senha"
+              id="exampleInputPassword1"
               onChange={(e) => [setPassword(e.target.value), setError("")]}
               // onChange={ handleChangePassword }
             />
@@ -82,7 +84,7 @@ export default function Login() {
             </button>
           <br />
           <br />
-          <span class="form-text">Não tem uma conta?</span>
+          <span className="form-text">Não tem uma conta?</span>
           <br />
           <div>
             <Link to="/register-login">
