@@ -10,8 +10,6 @@ function SearchResult(props) {
       <div className="mt-3">
         {props.marcas.map(item => (
           <div key={ item.id } className="card mb-2 shadow" >
-            {/* style={{width: "18rem"}} */}
-            {/* <img src="..." className="card-img-top" alt="..."/> */}
             <div className="card-body">
               <div className="d-flex justify-content-between">
                 <h5 className="card-title">

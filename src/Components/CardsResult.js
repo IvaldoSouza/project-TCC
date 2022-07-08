@@ -1,17 +1,6 @@
 import React from "react";
 
 function CardResult(props) {
-  // const navigate = useNavigate();
-  
-  // const [test, setTest] = useState()
-
-  // useEffect(() => {
-    
-  // }, [])
-  
-  // function UpdatePage() {
-  //   navigate('/card-result');
-  // }
 
   return(
     <div>

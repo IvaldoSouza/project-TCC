@@ -4,32 +4,6 @@ import MenuInicial from "../TelaInicial/MenuInicial";
 import apiConnect from "../Api/ApiConnect";
 import { useForm } from 'react-hook-form';
 
-// const initialState = [{
-//   "marca": "Nike",
-//   "fabricante": "Nike S.A",
-//   "fornecedor": "Luxótica",
-//   "notaFiscal": "12345"
-// },
-// {
-//   "marca": "Giorgi Armani",
-//   "fabricante": "Ótica S.A",
-//   "fornecedor": "Tecótica",
-//   "notaFiscal": "55512"
-// },
-// {
-//   "marca": "Adidas",
-//   "fabricante": "Adidas S.A",
-//   "fornecedor": "Luxótica",
-//   "notaFiscal": "4359"
-// },
-// {
-//   "marca": "Ray Ban",
-//   "fabricante": "Luxótica S.A",
-//   "fornecedo": "Luxótica",
-//   "notaFiscal": "25648"
-// }
-// ];
-
 function Register() {
   const [marcas, setMarcas] = useState([{}]);
 
@@ -43,22 +17,6 @@ function Register() {
 
   console.log('marcas', marcas)
   function registerMarcas(event) {
-    // event.preventDefault();
-
-    // if (!marcas) {
-    //   return setError(" Todos os campos são obrigatórios");
-    // }
-
-
-    // const newRegister = {
-    //   id: document.getElementById('id').value,
-    //   marca: document.getElementById('marca').value,
-    //   fabricante: document.getElementById('fabricante').value,
-    //   fornecedor: document.getElementById('fornecedor').value,
-    //   notaFiscal: document.getElementById('notaFiscal').value,
-    // };
-    // marcas.push(newRegister);
-    // setMarcas([...marcas]);
 
     apiConnect({
       method: "post",
@@ -86,11 +44,6 @@ function Register() {
       <h1>Cadastro de Marcas</h1>
 
       <form className="row g-3" onSubmit={ handleSubmit(registerMarcas) }>
-        {/* <div className="col-md-2">
-          <label for="inputEmail4" className="form-label">Id</label>
-            <input id='id' type="text" className="form-control shadow" readOnly
-            value={ Math.max.apply(Math, marcas.map(item => item.id)) + 1 } {...register("id")}/>
-        </div> */}
         <div className="col-md-8">
           <label for="inputEmail4" className="form-label">Nome Marca</label>
           <input id='marca' type="text" className="form-control shadow" {...register("marca")}/>

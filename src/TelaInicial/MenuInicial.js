@@ -26,58 +26,6 @@ const MenuInicial = () => {
           </button>
         </div>
       </nav>
-
-
-      {/* <Navbar
-        color="primary" 
-        expand="md"
-        dark
-      >
-        <NavbarBrand href="/home">
-          Home
-        </NavbarBrand>
-        <NavbarToggler onClick={function noRefCheck(){}} />
-        <Collapse navbar>
-          <Nav
-            className="me-auto"
-            navbar
-          >
-            <NavItem>
-              <NavLink href="/register">
-                Cadastrar Produtos
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/registration">
-                Registration
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown
-              inNavbar
-              nav
-            >
-              <DropdownToggle
-                caret
-                nav
-              >
-                Registration
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Lojista
-                </DropdownItem>
-                <DropdownItem>
-                  Fornecedor
-                </DropdownItem>
-                <DropdownItem divider />
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>
-            Sair
-          </NavbarText>
-        </Collapse>
-      </Navbar> */}
     </div>
   )
 }

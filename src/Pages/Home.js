@@ -28,20 +28,6 @@ function TelaInicial(props) {
         });
   }, []);
 
-  // const onChange = (ev) => {
-  //   ev.preventDefault()
-  //   const { value } = ev.target
-  //   console.log('aqui 10', value)
-  //   setSearchMarca(value)
-  // }
-
-  // function Search() {
-  //   console.log('chegou')
-  //   const value = onSubmit()
-  //   // const result = marcas.find( item => item.marca === value);
-  //   console.log('chegou 2', value)
-  // }
-
   const { register, handleSubmit } = useForm();
 
   const onSubmit = data => {
